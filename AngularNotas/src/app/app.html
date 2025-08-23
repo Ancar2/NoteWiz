@@ -1,0 +1,21 @@
+
+
+@if (tokenGuardado) {
+  <app-navbar></app-navbar>
+
+  <div class="row">
+    <div class="col-2 p-0">
+      <app-side-bar></app-side-bar>
+    </div>
+    <div class="col-10 p-0">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+}
+
+@if (!tokenGuardado) {
+   <router-outlet></router-outlet>
+}
+
+<app-footer></app-footer>

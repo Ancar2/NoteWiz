@@ -1,0 +1,12 @@
+<div class="note-item">
+  <div class="note-content">
+    <h2 class="note-title">{{titulo}}</h2>
+    <p class="note-text">{{nota}}</p>
+    <p class="mb-0 mt-5">Ultimo estado: {{status}}</p>
+   <p>Id: {{id}}</p>
+  </div>
+  <div class="note-actions">
+    <button (click)="recuperar()" class="btn restore">♻ Recuperar</button>
+    <button (click)="eliminar()" class="btn delete">🗑 Eliminar</button>
+  </div>
+</div>

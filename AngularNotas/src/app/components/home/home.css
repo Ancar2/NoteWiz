@@ -1,0 +1,99 @@
+.container-general {
+   width: 100%;
+  height: 100%;
+  min-height: 100dvh;
+  --color: #E1E1E1;
+  background-color: #F3F3F3;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+  background-size: 55px 55px;
+  z-index: -1;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: #f7f9fc;
+}
+
+#hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  /* border: 1px solid greenyellow; */
+}
+
+#scene {
+  /* position: absolute; */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+.overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #222;
+  margin-top: 10vh;
+}
+
+
+.headline {
+  font-size: 3rem;
+  font-weight: bold;
+  clip-path: inset(0 100% 0 0);
+  font-family: "Fredericka the Great", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.tittle{
+font-size: 15dvh;
+}
+
+.subtext {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  clip-path: inset(0 100% 0 0);
+}
+
+section {
+  padding: 0px 20px 100px;
+  max-width: 900px;
+  margin: auto;
+  /* border: 1px solid red;  */
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta-btn {
+  margin: 10px;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  background: #007bff;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.cta-btn.outline {
+  background: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}

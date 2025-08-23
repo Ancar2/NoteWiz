@@ -1,0 +1,18 @@
+
+<div class="container-trash">
+<h2 class="p-4">Papelera</h2>
+  @for (item of arrayNotas; track $index) {
+     @if(item.isDeleted == true){
+       <app-card-trash
+       [titulo] = 'item.titulo'
+       [nota] = 'item.descripcion'
+       [status]= "item.status"
+       [id]= "item._id"
+       (edit)="recoverNota(item._id)"
+       (delete)="eliminarNotaPer(item._id)"
+      ></app-card-trash>
+
+     }
+   }
+</div>
+

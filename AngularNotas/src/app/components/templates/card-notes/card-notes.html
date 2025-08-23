@@ -1,0 +1,40 @@
+<div class="containerNotes">
+  <div class="page  {{status}}">
+
+    <div class="margin">
+    </div>
+
+    <p class="d-flex justify-content-end id">
+      creado el {{createAt | date: 'dd/MM/yyyy HH:mm'}}
+    </p>
+
+    <h2>
+      {{titulo}}
+    </h2>
+
+    <p class="mt-4 mb-4">
+      {{nota}}
+    </p>
+
+    <div class="d-flex justify-content-center gap-4">
+      <button class="eliminar" (click)="drop = !drop">Borrar</button>
+      <button class="eliminar" (click)="actualizar()" data-bs-toggle="modal" data-bs-target="#exampleModalEditar">Editar</button>
+    </div>
+
+    @if(drop){
+      <div class="d-flex justify-content-center">
+        <button class="eliminar" (click)="eliminar()">si</button>
+        <button class="eliminar" (click)="drop = false" >no</button>
+      </div>
+    }
+
+    <p class="d-flex justify-content-start id mt-4 mb-0 p-0 estado">
+      Estado: {{status}}
+    </p>
+     <p class="d-flex justify-content-start id mt-0 mb-0 p-0">
+      id: {{id}}
+    </p>
+
+  </div>
+
+</div>

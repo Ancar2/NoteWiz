@@ -1,0 +1,96 @@
+<div class="container-general">
+  <h2 class="p-4">Notas</h2>
+  <!-- Button trigger modal -->
+  <div class="container-boton">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Crear Nota
+    </button>
+  </div>
+
+  <div class="containerNotes">
+    @for (item of arrayNotas; track $index) {
+      @if(item.isDeleted ==false){
+        <app-card-notes
+          [titulo]='item.titulo'
+          [nota]='item.descripcion'
+          [status]="item.status"
+          [id]="item._id"
+          (edit)="eliminarNota(item._id)"
+          [createAt]="item.createdAt"
+          (update)="editarNota(item._id)"
+        ></app-card-notes>
+      }
+    }
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="note-card">
+            <h2>📝 Crear Nota</h2>
+
+            <form [formGroup]="formNotes">
+              <input formControlName="titulo" type="text" placeholder="Título de la nota" required />
+
+              <textarea formControlName="descripcion" rows="5" placeholder="Descripción de la nota..."
+                required></textarea>
+
+              <button (click)="createNote()" type="submit" data-bs-dismiss="modal">➕ Crear Nota</button>
+            </form>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal editar -->
+
+  <div class="modal fade" id="exampleModalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="note-card">
+            <h2>📝 Editar Nota</h2>
+
+            <form [formGroup]="formNotes">
+              <input formControlName="titulo" type="text" placeholder="Título de la nota" required />
+
+              <textarea formControlName="descripcion" rows="5" placeholder="Descripción de la nota..."
+                required></textarea>
+
+              <button (click)="actualizarNota()" type="submit" data-bs-dismiss="modal">➕ Editar Nota</button>
+              <div class="d-flex m-2 gap-2">
+
+                <button (click)="statusNota('pendiente')" data-bs-dismiss="modal" class="bg-danger">Pendiente</button>
+                <button (click)="statusNota('ejecutando')" data-bs-dismiss="modal" class="bg-warning" >Ejecutando</button>
+                <button (click)="statusNota('finalizado')" data-bs-dismiss="modal" class="bg-success">Finalizado</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

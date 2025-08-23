@@ -1,0 +1,17 @@
+<div class="containerg">
+  <button class="home-btn" routerLink="/home">
+  <i class="bi bi-house-fill"></i>
+</button>
+
+<div class="container-login">
+<form class="form" [formGroup]="formUser">
+    <span class="title">Log In</span>
+    <label for="email" class="label">Email</label>
+    <input formControlName="correo" type="email" id="email" name="email" required="" class="input">
+    <label for="password" class="label">Password</label>
+    <input formControlName="password" type="password" id="password" name="password" required="" class="input">
+    <button type="submit" class="submit" (click)="loginUser()">sign in</button>
+    <button type="submit" class="submit mt-3" routerLink="/register">register</button>
+  </form>
+  </div>
+</div>

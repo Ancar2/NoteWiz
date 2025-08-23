@@ -1,0 +1,63 @@
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #fff5f5;
+  border: 1px solid #ffcccc;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.note-content {
+  flex: 1;
+  margin-right: 15px;
+
+}
+
+.note-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #b33a3a;
+}
+
+.note-text {
+  margin: 5px 0 0;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.note-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btn.restore {
+  background-color: #d4f8d4;
+  color: #2d7a2d;
+}
+
+.btn.restore:hover {
+  background-color: #baf0ba;
+}
+
+.btn.delete {
+  background-color: #ffdddd;
+  color: #a11;
+}
+
+.btn.delete:hover {
+  background-color: #ffbbbb;
+}

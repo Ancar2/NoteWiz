@@ -7,6 +7,7 @@ import { Login } from './components/public/login/login';
 import { authBlockGuard } from './guards/auth-block-guard/auth-block-guard';
 import { authGuard } from './guards/auth-guard/auth-guard';
 import { HomeComponent } from './components/home/home';
+import { Verify } from './components/public/verify/verify';
 
 export const routes: Routes = [
   {
@@ -33,6 +34,11 @@ export const routes: Routes = [
     path: 'register',
     canActivate: [authBlockGuard],
     component: Register
+  },
+   {
+    path: 'verify',
+    canActivate: [authBlockGuard],
+    component: Verify
   },
   {
     path: 'login',

@@ -36,9 +36,10 @@ export class Register {
 
 
         let timerInterval: any;
+
         Swal.fire({
           title: "Usuario Registrado",
-          html: "puedes iniciar sesion en <b></b> milliseconds.",
+          html: "Enviando token en <b></b> milliseconds.",
           timer: 2000,
           timerProgressBar: true,
           didOpen: () => {
@@ -51,6 +52,7 @@ export class Register {
           willClose: () => {
             clearInterval(timerInterval);
           }
+
         }).then((result) => {
           /* Read more about handling dismissals below */
           if (result.dismiss === Swal.DismissReason.timer) {
@@ -59,10 +61,11 @@ export class Register {
         });
 
 
-        this.router.navigate(['/login']);
+        this.router.navigate(['/verify']);
       },
       error: (error: any) => {
         console.log('Error al registrar el usuario', error);
+        return alert (error.error)
       }
     })
   }

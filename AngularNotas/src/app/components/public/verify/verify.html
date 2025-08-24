@@ -1,0 +1,27 @@
+<div class="containerg">
+  <button routerLink="/home" class="home-btn" routerLink="/home">
+  <i class="bi bi-house-fill"></i>
+</button>
+
+<div class="verify-container">
+  <h1>Verificación de correo</h1>
+  <h4>dirigete al enlace de tu bandeja de entrada o</h4>
+
+  <button class="btn bg-success" (click)="drop = !drop">ingresar codigo manual</button>
+
+  @if(drop){
+
+    <form class="form" [formGroup]="formUser">
+    <input formControlName="correo" type="text" placeholder="Ingresa tu correo">
+    <input formControlName="token" type="text" placeholder="Ingresa el codigo">
+    <button (click)="verifyEmailInput()" class="bg-success btn">Verificar</button>
+    </form>
+
+  }
+
+  <p *ngIf="loading">Verificando tu cuenta, por favor espera...</p>
+  <p *ngIf="success" class="success">¡Tu correo ha sido verificado con éxito!</p>
+  <p *ngIf="errorMsg" class="error">{{ errorMsg }}</p>
+  <a routerLink="/login" *ngIf="success" class="btn">Ir a Iniciar Sesión</a>
+</div>
+</div>

@@ -36,6 +36,7 @@ export class Login {
       },
       error: (error: any) => {
         console.log('Error al loguear el usuario', error);
+        return alert(error.error.error)
       }
     })
   }

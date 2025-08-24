@@ -7,7 +7,7 @@ const workSchema = mongoose.Schema(
       required: true,
       minlenght: 3,
       maxlenght: 30,
-      match: /^[a-zA-ZáéíóúüÁÉÍÓÚÜ]+$/,
+      match: /^[a-zA-ZáéíóúüÁÉÍÓÚÜ\s]+$/,
     },
 
     descripcion: {

@@ -9,6 +9,7 @@ const router = express.Router()
 router.get('/users', controllUser.getUser)
 router.get('/users/:id', controllUser.getOneUser)
 router.post('/users/create', controllUser.createUser)
+router.post('/users/verify', controllUser.verificar)
 router.put('/users/update/:id', controllUser.updateUser)
 router.delete('/users/delete/:id', controllUser.deleteUser)
 

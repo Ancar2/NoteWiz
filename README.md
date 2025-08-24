@@ -101,6 +101,9 @@ PORT= 3000
 DB_URL= 'mongodb://localhost:27017/notasapp'
 SECRET_JWT_KEY= 'tuClave'
 TOKEN_EXPIRE= '2H'
+CORREO = 'corrreo con el que se enviaran las verificaciones'
+PASSCORREO = 'password' (configurarla como password de aplicaciones en la aplicacion de gmail, si utiliza gmail)
+SERVICECORREO = "gmail"
 ```
 
 #### Iniciar el servidor

@@ -9,6 +9,10 @@ exports.login = async(req, res) =>{
         let user = await userModel.findOne({correo: data.correo})
 
         if (user) {
+            // Verifica si el usuario está confirmado
+            if (!user.verified) {
+            return res.status(403).json({ error: 'Usuario no verificado. Revisa tu correo.' });
+            }
             const esValida = await bcrypt.compare(data.password, user.password);
 
             if (esValida) {

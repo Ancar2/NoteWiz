@@ -13,4 +13,8 @@ export class User {
     return this.http.post(`${this.apiUrl}/users/create`, body)
   }
 
+  verificar(correo:any, token: any) {
+    return this.http.post(`${this.apiUrl}/users/verify`, { correo, token })
+  }
+
 }

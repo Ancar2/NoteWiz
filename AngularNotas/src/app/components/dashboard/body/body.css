@@ -91,3 +91,6 @@ body {
   z-index: 999;
 }
 
+.modal{
+  background: #007bff3d;
+}

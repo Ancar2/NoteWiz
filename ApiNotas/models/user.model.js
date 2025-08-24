@@ -35,6 +35,13 @@ const userSchema = mongoose.Schema({
         minlenght: 4,
         maxlenght: 20,
     },
+    // agregue esto 2
+    verified: { 
+        type: Boolean, 
+        default: false 
+    },
+
+    verificationToken: String,
 },{
     timestamps: true,
 })

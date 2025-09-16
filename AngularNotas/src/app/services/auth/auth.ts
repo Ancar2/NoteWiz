@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class Auth {
-  private apiUrl :string = 'http://localhost:3000/api'
+  private apiUrl :string = 'http://3.19.60.135/NoteWiz/api'
   constructor (private http: HttpClient, private router: Router){}
 
   login(body: any) {

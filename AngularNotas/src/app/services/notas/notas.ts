@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class Notas {
- public apiUrl: string = 'http://localhost:3000/api';
+ public apiUrl: string = 'http://3.19.60.135/NoteWiz/api';
 
   constructor(public http: HttpClient) { }
 

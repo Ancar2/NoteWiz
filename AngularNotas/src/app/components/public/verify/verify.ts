@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { User } from '../../../services/users/user';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
@@ -19,7 +19,7 @@ export class Verify {
   formUser! : FormGroup
   drop: boolean = false;
 
-  constructor(private route: ActivatedRoute, private fb: FormBuilder){
+  constructor(private route: ActivatedRoute, private fb: FormBuilder, private router: Router){
     this.formUser = fb.group({
       correo: ['', [Validators.required, Validators.email]],
       token: ['', [Validators.required]],
@@ -30,6 +30,8 @@ export class Verify {
     this.route.queryParams.subscribe(params => {
       const correo = params['email'];
       const token = params['token'];
+      console.log(correo);
+      console.log(token);
 
       if(correo && token) {
         this.verifyEmail(correo, token);
@@ -73,7 +75,8 @@ export class Verify {
            this.loading = false;
         this.success = true;
         console.log('Correo verificado con éxito');
-
+        this.router.navigate(['/login'])
+        alert ('Correo verificado con éxito. inicia sesion!')
       },
      error: (error: any) => {
     if (error.status === 0) {

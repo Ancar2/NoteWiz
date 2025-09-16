@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class User {
-    private apiUrl :string = 'http://localhost:3000/api'
+    private apiUrl :string = 'http://3.19.60.135/NoteWiz/api'
 
     constructor ( private http: HttpClient){}
 
@@ -14,7 +14,7 @@ export class User {
   }
 
   verificar(correo:any, token: any) {
-    return this.http.post(`${this.apiUrl}/users/verify`, { correo, token })
+    return this.http.post(`${this.apiUrl}/users/verify`, { correo: correo, token: token })
   }
 
 }

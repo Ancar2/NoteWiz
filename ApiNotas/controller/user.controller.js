@@ -89,7 +89,7 @@ exports.verificar = async (req, res) => {
       await user.save();  
     }
     
-    return res.json({ message: "Usuario verificado" });
+    return res.status(200).json({ message: "Usuario verificado" });
 
   } catch (error) {
     res.status(400).json({ error: "Token inválido", error: error.message });

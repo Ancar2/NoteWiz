@@ -44,7 +44,7 @@ exports.createUser = async (req, res) => {
     }
 
     const verificationToken = Math.random().toString(36).substr(2, 8);
-    const verificationLink = `http://localhost:4200/verify?email=${encodeURIComponent(body.email)}&token=${verificationToken}`;
+    const verificationLink = `${process.env.PUNTO_ENLACE}/verify?email=${encodeURIComponent(body.correo)}&token=${verificationToken}`;
 
     body.verificationToken = verificationToken;
     let newUser = new userModel(body);
